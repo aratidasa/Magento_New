@@ -1,0 +1,19 @@
+<?php
+/** @var \Testvendor\Blog\Block\Template $block */
+
+$recent_blog = $this->getRecentBlogs();
+?>
+
+<!-- <div class="template">
+    <h1><?=$block->getName()?></h1>
+</div> -->
+<div class="">
+    <?php if(!$recent_blog): ?>
+        <p class="error">No blogs were found...</p>
+        <?php else: ?>
+    <?php  foreach($recent_blog as $blog):   ?>
+    <h2><?= $blog['title']; ?></h2>
+    <p><?= $blog['content']; ?></p>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</div>
